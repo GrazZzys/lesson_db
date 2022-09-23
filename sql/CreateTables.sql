@@ -72,6 +72,10 @@ CREATE TABLE sessions
         ON DELETE RESTRICT
         ON UPDATE CASCADE,
 
+    FOREIGN KEY (department_id) REFERENCES departments (id)
+        ON DELETE NO ACTION
+        ON UPDATE NO ACTION,
+
     FOREIGN KEY (audience_id) REFERENCES audiences (id)
         ON DELETE RESTRICT
         ON UPDATE CASCADE

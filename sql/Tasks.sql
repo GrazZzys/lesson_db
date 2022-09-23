@@ -2,7 +2,7 @@
 #   групп/кафедр/преподавателей/студентов/аудиторий/времени
 ### Добавлени зачёта группе
 INSERT INTO sessions (lector_id, audience_id, department_id, type, title, date, time)
-VALUES (2, 5, 2, false, 'Матан', CURRENT_DATE, CURRENT_TIME);
+VALUES (2, 5, 2, false, 'Матан', '2022-01-12', CURRENT_TIME);
 
 INSERT INTO session_group (session_id, group_id)
 VALUES (2, 1),
@@ -21,9 +21,9 @@ INSERT INTO sessions (lector_id, audience_id, department_id, type, title, date, 
 VALUES (2, 3, 2, true, 'Албебра', '2022-02-14', CURRENT_TIME);
 
 INSERT INTO session_group (session_id, group_id)
-VALUES (7, 1),
-       (7, 2),
-       (7, 3);
+VALUES (4, 1),
+       (4, 2),
+       (4, 3);
 
 ### Получение расписания сессии у конкретной ГРУППЫ
 SELECT s.type                                          as type,
@@ -88,11 +88,11 @@ INSERT INTO test_results (session_id, student_id, mark)
 VALUES (2, 2, true);
 
 INSERT INTO exam_results (session_id, student_id, mark)
-VALUES (7, 1, 3);
+VALUES (4, 1, 3);
 
 ### Проверка корректности оценки
 INSERT INTO exam_results (session_id, student_id, mark)
-VALUES (7, 2, 10);
+VALUES (4, 2, 10);
 
 ### Получение результатов сессии конкретного СТУДЕНТА
 SELECT type,
@@ -117,9 +117,9 @@ VALUES (2, 5, 2, false, 'Химия', '2022-03-14', '12:00:00');
 
 ### Проверка на промежуток экзаменов для одной группы
 INSERT INTO session_group (session_id, group_id)
-VALUES (4, 1);
+VALUES (5, 1);
 
 INSERT INTO sessions (lector_id, audience_id, department_id, type, title, date, time)
 VALUES (2, 5, 2, false, 'Химия', '2022-03-18', '12:00:00');
 INSERT INTO session_group (session_id, group_id)
-VALUES (6, 1);
+VALUES (7, 1);
